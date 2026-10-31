@@ -1,0 +1,87 @@
+// L298N Pins
+const int ENA = 5;
+const int IN1 = 8;
+const int IN2 = 7;
+const int IN3 = 4;
+const int IN4 = 3;
+const int ENB = 6;
+
+int currentSpeed = 200; // Starting with higher speed
+
+void setup() {
+  pinMode(ENA, OUTPUT);
+  pinMode(ENB, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+
+  stopCar();
+  Serial.begin(9600); // Direct Hardware Serial
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char cmd = Serial.read();
+
+    if (cmd == 'F') { forward(); }
+    else if (cmd == 'B') { backward(); }
+    else if (cmd == 'L') { turnLeft(); }
+    else if (cmd == 'R') { turnRight(); }
+    else if (cmd == 'S') { stopCar(); }
+    
+    // Speed values
+    else if (cmd >= '0' && cmd <= '9') {
+      currentSpeed = map(cmd - '0', 0, 9, 100, 255);
+    }
+    else if (cmd == 'q') {
+      currentSpeed = 255;
+    }
+  }
+}
+
+void applySpeed() {
+  analogWrite(ENA, currentSpeed);
+  analogWrite(ENB, currentSpeed);
+}
+
+void forward() {
+  applySpeed();
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+
+void backward() {
+  applySpeed();
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+}
+
+void turnLeft() {
+  applySpeed();
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+
+void turnRight() {
+  applySpeed();
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+}
+
+void stopCar() {
+  analogWrite(ENA, 0);
+  analogWrite(ENB, 0);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+}
