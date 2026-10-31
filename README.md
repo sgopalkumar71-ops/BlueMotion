@@ -1,16 +1,15 @@
 # BlueMotion
 
-
-
-# 🚗 RoboDrive X
 ### Bluetooth Controlled Smart Robotic Car
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-Arduino_UNO-00979D?style=for-the-badge&logo=arduino" />
-  <img src="https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus" />
-  <img src="https://img.shields.io/badge/Communication-Bluetooth-0082FC?style=for-the-badge&logo=bluetooth" />
-  <img src="https://img.shields.io/badge/Status-Prototype-orange?style=for-the-badge" />
-</p>
+<img width="1069" height="1001" alt="WhatsApp Image 2026-10-21 at 10 30 21 AM" src="https://github.com/user-attachments/assets/ada2279d-1b51-47f7-ade4-fe3e608a70f6" />
+
+<img width="800" height="800" alt="Wx_Q0WfPLUQvkGLHaoKcrzxoHH5mHSFU-xOprqhQznZQEi983inbPuavKLH4VQG0e_i6p6VR5WNhWhtJxk4BrG9bcvlXzSb1V142pAXUaYnE_bytxAQ0gwGJXwqmSTcBm8YX0jQSqWu6Jnc-kLfQhhbioDTmxre_Dje-aXpgTIYtN2ybNnu0IMIjMIbIC4hi" src="https://github.com/user-attachments/assets/1541a051-7ec6-43e3-9e16-0f426ab15717" />
+
+<img width="812" height="757" alt="Screenshot 2026-08-05 220747" src="https://github.com/user-attachments/assets/6c527119-df11-4a51-be15-aedee872e136" />
+
+<img width="1152" height="864" alt="image" src="https://github.com/user-attachments/assets/b994d9de-bf16-4782-947a-beed7e6d4887" />
+
 
 ## 📌 Project Overview
 
@@ -22,15 +21,15 @@ The car can move forward, backward, turn left, turn right, stop, and adjust its 
 
 ## ✨ Key Features
 
-- 📱 Wireless control through an Android smartphone.
-- 🔵 HC-05 Bluetooth communication.
-- ⬆️ Forward movement.
-- ⬇️ Backward movement.
-- ⬅️ Left turn.
-- ➡️ Right turn.
-- 🛑 Instant stop command.
-- ⚡ Adjustable motor speed using PWM.
-- 🎮 Command-based movement control.
+-  Wireless control through an Android smartphone.
+-  HC-05 Bluetooth communication.
+-  Forward movement.
+-  Backward movement.
+-  Left turn.
+-  Right turn.
+-  Instant stop command.
+-  Adjustable motor speed using PWM.
+-  Command-based movement control.
 
 ## 🔧 Hardware Components
 
@@ -108,25 +107,7 @@ The project uses PWM-based motor speed control.
 
 No additional Arduino libraries are required for this sketch.
 
-## 📂 Project Structure
-
-```text
-RoboDrive-X/
-│
-├── README.md
-│
-├── Arduino/
-│   └── RoboDrive_X.ino
-│
-├── Images/
-│   ├── robot-car.jpg
-│   └── circuit-diagram.png
-│
-└── Documentation/
-    └── connections.md
-```
-
-## 🚀 How to Run
+##  How to Run
 
 1. Install Arduino IDE.
 2. Connect Arduino UNO to your computer.
@@ -140,7 +121,7 @@ RoboDrive-X/
 
 **Serial Communication:** 9600 baud.
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - Add obstacle detection using ultrasonic sensors.
 - Integrate ESP32 for Wi-Fi control.
